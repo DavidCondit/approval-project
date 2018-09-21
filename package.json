@@ -1,0 +1,25 @@
+{
+  "name": "approval-project",
+  "version": "1.0.0",
+  "description": "My kewl app",
+  "scripts": {
+    "compile:sass": "node-sass src/sass/main.scss dist/style.css",
+    "watch:sass": "node-sass src/sass/main.scss dist/style.css -w",
+    "devserver": "live-server --port=8083",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "build-dev": "webpack --config webpack.dev.js",
+    "build-prod": "webpack --config webpack.prod.js"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.3",
+    "ts-loader": "^5.1.1",
+    "typescript": "^3.0.3",
+    "typescript-cli": "^0.1.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "npm-run-all": "^4.1.3"
+  }
+}
