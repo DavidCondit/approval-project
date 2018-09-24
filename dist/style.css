@@ -12,62 +12,137 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-family: 'Open Sans's, sans-serif;
-  font-weight: 400;
-  line-height: 1.6;
-  color: #777;
   min-height: 100vh; }
 
-.search {
-  flex: 0 0 40%;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-  .search__input {
-    font-family: inherit;
-    font-size: inherit;
-    color: inherit;
-    background-color: #f4f2f2;
-    border: none;
-    padding: .7rem 2rem;
-    margin-right: -3.25rem;
-    border-radius: 100px;
-    width: 90%;
-    transition: all .2s; }
-    .search__input:focus {
-      outline: none;
-      width: 100%;
-      background-color: #f0eeee; }
-    .search__input::-webkit-input-placeholder {
-      font-weight: 100;
-      color: #ccc; }
-  .search__button {
-    border: none;
-    background-color: #f4f2f2; }
-    .search__button:focus {
-      outline: none; }
-    .search__button:active {
-      transform: translateY(2px); }
-  .search__input:focus + .search__button {
-    background-color: #f0eeee; }
-  .search__icon {
-    height: 2rem;
-    width: 2rem;
-    fill: #999; }
+.u-center-text {
+  text-align: center !important; }
 
-.container {
-  max-width: 120rem;
-  margin: 8rem auto;
-  background-color: #f4f2f2;
-  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
-  min-height: 50rem; }
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+
+.u-margin-top-big {
+  margin-top: 8rem !important; }
+
+.u-margin-top-huge {
+  margin-top: 10rem !important; }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #333;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out; }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #5a86e4, #112f92);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem;
+  transition: all .2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
 .switch {
   font-size: 2rem;
-  display: block;
+  display: inline-block;
   position: relative;
   width: 6rem;
-  height: 3rem;
+  height: 4rem;
   cursor: pointer;
   user-select: none; }
   .switch__background {
@@ -115,3 +190,174 @@ body {
     margin-right: 2rem; }
   .switch__label > i {
     display: block; }
+
+.select {
+  display: inline-block;
+  position: relative;
+  margin-top: none;
+  padding-top: none;
+  vertical-align: top; }
+  .select__content {
+    /* Reset user-agent appearance. */
+    font-family: inherit;
+    appearance: none;
+    outline: none;
+    box-shadow: none;
+    color: inherit;
+    background: #faf9f9;
+    border: 1px solid #999;
+    background-image: none;
+    width: 30rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    text-indent: 2rem; }
+    .select__content .select__option {
+      font-family: inherit;
+      color: inherit; }
+
+.textbox {
+  outline: none;
+  border: none;
+  vertical-align: top;
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: #222;
+  background: #faf9f9;
+  border: 1px solid #999;
+  display: inline-block;
+  height: 4rem;
+  padding: 1rem 1.5rem; }
+
+@media only screen and (min-width: 701px) {
+  .table {
+    border: none;
+    border-collapse: collapse;
+    color: inherit;
+    font-size: 1.5rem;
+    font-family: inherit; }
+    .table--striped .table__row:nth-child(even) {
+      background: #f4f2f2; }
+    .table__row .cell {
+      border: 1px solid #ccc;
+      padding: 1rem; }
+      .table__row .cell--heading {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 100;
+        border: 1px solid #f4f2f2; }
+    .table__heading {
+      background: #5a86e4; } }
+
+@media only screen and (max-width: 700px) {
+  /* 
+		Transforms normal table rows into border-bottom separated "chunks." 
+		Headings are added to the left of each row's field. 
+		Row fields are stacked vertically. 
+		
+		Rules:
+			1. td content must be nested in a span.
+			2. "Row field" td total height must equal "Row field heading" td::before total height.
+	*/
+  .table {
+    font-size: 1.2rem;
+    font-family: inherit;
+    border: none;
+    border-collapse: collapse; }
+  .table, .table__heading, .table__body, .table__row, .cell {
+    display: block; }
+  /* Hide heading cells. */
+  .cell--heading {
+    display: none; }
+  .table__heading .table__row {
+    border: none;
+    margin-bottom: 0; }
+  .table__row {
+    border: 1px solid #ccc;
+    margin-bottom: 5px; }
+  /* Row cell. */
+  .cell {
+    position: relative;
+    margin-left: 12rem;
+    /* Push cell to the right to make room for the ::before "heading cell" that will be placed to the left of this cell. */
+    display: block;
+    height: 3rem;
+    padding: 1rem;
+    border-bottom: 1px solid #f4f2f2;
+    /* Row field heading. */ }
+    .cell:last-child {
+      border-bottom: none; }
+    .cell__content {
+      /* Cut-off wide "row heading" cell text. */
+      display: block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+    .cell::before {
+      content: attr(data-column-name);
+      background: #5a86e4;
+      color: #fff;
+      display: inline-block;
+      position: absolute;
+      left: -12rem;
+      height: 3rem;
+      padding: 1rem;
+      border-bottom: 1px solid #f4f2f2;
+      top: 0px;
+      width: 12rem;
+      /* Cut-off wide "row heading" text. */
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+      .cell::before:last-child {
+        border-bottom: none; } }
+
+.button {
+  position: relative;
+  display: inline-block;
+  width: 6rem;
+  height: 4rem;
+  padding: 1.5rem 2rem;
+  background: #777;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  color: #fff; }
+
+.menu {
+  position: relative;
+  display: inline-block;
+  vertical-align: top; }
+  .menu:hover .menu__content {
+    display: block; }
+  .menu__button {
+    width: auto;
+    /* Vertical ellipsis. */ }
+    .menu__button::before {
+      content: "\2807";
+      display: inline-block;
+      color: #fff;
+      font-size: 3rem;
+      padding: 0;
+      margin: 0;
+      padding-left: 5px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+  .menu__content {
+    display: none;
+    position: absolute;
+    border: 1px solid #ccc;
+    z-index: 1;
+    color: inherit;
+    background: #fff; }
+    .menu__content .menu__item {
+      display: block;
+      padding: 1rem;
+      font-size: 1.5rem;
+      text-decoration: none;
+      font-family: inherit;
+      color: inherit; }
+      .menu__content .menu__item:hover {
+        background: #5a86e4;
+        color: #fff; }

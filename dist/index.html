@@ -10,13 +10,96 @@
 </head>
 <body>
 
-    <label class="switch">
-        <input class="switch__checkbox" type="checkbox" checked/>
-        <div class="switch__background"></div>
-        <span class="switch__slider"></span>
-        <span class="switch__label switch__label-on"><i class="fa fa-plus"></i></span>
-        <span class="switch__label switch__label-off"><i class="fa fa-minus"></i></span>
-    </label>
+    <section>
+        <div class="row">
+            <label class="switch">
+                <input class="switch__checkbox" type="checkbox" checked/>
+                <div class="switch__background"></div>
+                <span class="switch__slider"></span>
+                <span class="switch__label switch__label-on"><i class="fa fa-plus"></i></span>
+                <span class="switch__label switch__label-off"><i class="fa fa-minus"></i></span>
+            </label>
+
+            <div class="select">
+                    <select name="flex-security-group" id="flexi-security-group" class="select__content">
+                        <option class="select__option">Select a Flexi Security Group</option>
+                        <option value="1" class="select__option">Accountant 1 (w/o Pull Entry)</option>
+                        <option value="2" class="select__option">Accountant 2 (w/ Pull Entry)</option>
+                        <option value="3" class="select__option">AP Processor</option>
+                        <option value="4" class="select__option">AP Processor Backup</option>
+                        <option value="5" class="select__option">AR Processor</option>
+                        <option value="6" class="select__option">AR Processor Backup</option>
+                        <option value="7" class="select__option">Controller 1 (w/o Pull Entry)</option>
+                        <option value="8" class="select__option">Controller 2 (w/ Pull Entry)</option>
+                    </select>
+                </div>
+
+                <input type="text" name="my-textbox" id="my-textbox" class="textbox">                               
+                
+                <div class="menu">
+                    <button class="button menu__button"></button>
+                    <div class="menu__content">
+                        <a href="#edit" class="menu__item">Edit</a>
+                        <a href="#remove" class="menu__item">Remove</a>                        
+                    </div>
+                </div>
+
+        </div>
+
+        <div class="row">
+            <table class="table table--striped">
+                <thead class="table__heading">
+                    <tr class="table__row">
+                        <th class="cell--heading"><span class="cell__content">Column 1</span></th>
+                        <th class="cell--heading"><span class="cell__content">Col 2</span></th>
+                        <th class="cell--heading"><span class="cell__content">Column 3</span></th>
+                        <th class="cell--heading"><span class="cell__content">Column 4</span></th>
+                        <th class="cell--heading"><span class="cell__content">Column 5</span></th>
+                        <th class="cell--heading"><span class="cell__content">A very wide column 6</span></th>
+                        <th class="cell--heading"><span class="cell__content">Column 7</span></th>
+                        <th class="cell--heading"><span class="cell__content">Column 8</span></th>
+                        <th class="cell--heading"><span class="cell__content">Column 9</span></th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row">
+                        <td class="cell" data-column-name="Column 1"><span class="cell__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></td>
+                        <td class="cell" data-column-name="Col 2"><span class="cell__content">Integer aliquet mauris sit amet pretium feugiat.</span></td>
+                        <td class="cell" data-column-name="Column 3"><span class="cell__content">Etiam quis nunc viverra, varius arcu id, tempus sem.</span></td>
+                        <td class="cell" data-column-name="Column 4"><span class="cell__content">Curabitur eu diam in velit blandit venenatis sed sit amet felis.</span></td>
+                        <td class="cell" data-column-name="Column 5"><span class="cell__content">Value 5</span></td>
+                        <td class="cell" data-column-name="A very wide column 6"><span class="cell__content">Value 6</span></td>
+                        <td class="cell" data-column-name="Column 7"><span class="cell__content">Value 7</span></td>
+                        <td class="cell" data-column-name="Column 8"><span class="cell__content">Value 8</span></td>
+                        <td class="cell" data-column-name="Column 9"><span class="cell__content">Value 9</span></td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="cell" data-column-name="Column 1"><span class="cell__content">Value 1</span></td>
+                        <td class="cell" data-column-name="Col 2"><span class="cell__content">Value 2</span></td>
+                        <td class="cell" data-column-name="Column 3"><span class="cell__content">Value 3</span></td>
+                        <td class="cell" data-column-name="Column 4"><span class="cell__content">Value 4</span></td>
+                        <td class="cell" data-column-name="Column 5"><span class="cell__content">Value 5</span></td>
+                        <td class="cell" data-column-name="A very wide column 6"><span class="cell__content">Value 6</span></td>
+                        <td class="cell" data-column-name="Column 7"><span class="cell__content">Value 7</span></td>
+                        <td class="cell" data-column-name="Column 8"><span class="cell__content">Value 8</span></td>
+                        <td class="cell" data-column-name="Column 9"><span class="cell__content">Value 9</span></td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="cell" data-column-name="Column 1"><span class="cell__content">Value 1</span></td>
+                        <td class="cell" data-column-name="Col 2"><span class="cell__content">Value 2</span></td>
+                        <td class="cell" data-column-name="Column 3"><span class="cell__content">Value 3</span></td>
+                        <td class="cell" data-column-name="Column 4"><span class="cell__content">Value 4</span></td>
+                        <td class="cell" data-column-name="Column 5"><span class="cell__content">Value 5</span></td>
+                        <td class="cell" data-column-name="A very wide column 6"><span class="cell__content">Value 6</span></td>
+                        <td class="cell" data-column-name="Column 7"><span class="cell__content">Value 7</span></td>
+                        <td class="cell" data-column-name="Column 8"><span class="cell__content">Value 8</span></td>
+                        <td class="cell" data-column-name="Column 9"><span class="cell__content">Value 9</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>                
+    </section>
+
 
     <script src="./main.js"></script>
 </body>

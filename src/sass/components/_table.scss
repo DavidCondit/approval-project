@@ -1,0 +1,129 @@
+@media only screen and (min-width: 701px) {
+    .table {
+        border: none;
+        border-collapse: collapse;
+        color: inherit;
+        font-size: 1.5rem;
+        font-family: inherit;
+
+        &--striped {
+            & .table__row:nth-child(even) {
+                background: $color-grey-light-2;
+            }
+        }
+        
+        &__row {
+
+            & .cell {
+                
+                border: $line-light-2;
+                padding: 1rem;
+                &--heading {
+                    color: $color-white;
+                    font-size: 1.5rem;
+                    font-weight: 100;
+                    border: $line-light-1;      
+                }
+            }
+        }    
+
+        &__heading {
+            background: $color-primary-light;
+        }
+
+        &__body {
+
+        }
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+	
+	/* 
+		Transforms normal table rows into border-bottom separated "chunks." 
+		Headings are added to the left of each row's field. 
+		Row fields are stacked vertically. 
+		
+		Rules:
+			1. td content must be nested in a span.
+			2. "Row field" td total height must equal "Row field heading" td::before total height.
+	*/
+	
+    .table {
+        font-size: 1.2rem;
+        font-family: inherit;
+        border: none;
+        border-collapse: collapse;
+	}
+	
+	.table, .table__heading, .table__body, .table__row, .cell {
+		display: block;
+	}
+        
+    /* Hide heading cells. */
+	.cell--heading {
+		display: none;
+	}
+        
+    .table__heading {
+        & .table__row {
+            border: none;
+            margin-bottom: 0;
+        }
+    }
+
+    .table__row {
+        border: $line-light-2;        
+        margin-bottom: 5px;
+    }
+
+	/* Row cell. */
+	.cell {
+		position: relative;
+		margin-left: 12rem; /* Push cell to the right to make room for the ::before "heading cell" that will be placed to the left of this cell. */
+		display: block;
+        height: 3rem;
+        padding: 1rem;
+        border-bottom: $line-light-1;
+            
+        &:last-child {
+            border-bottom: none;
+        }
+        
+        &__content {
+            /* Cut-off wide "row heading" cell text. */
+            display: block;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        /* Row field heading. */
+        &::before {
+            content: attr(data-column-name);
+            background: $color-primary-light;
+            color: $color-white;
+            display: inline-block;
+            position: absolute;
+            left: -12rem;
+            height: 3rem;
+            padding: 1rem;
+            border-bottom: $line-light-1;
+            top: 0px;
+            width: 12rem;
+            /* Cut-off wide "row heading" text. */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;	
+            
+            &:last-child {
+                border-bottom: none;
+            }
+        }        
+	}
+	
+	
+
+	
+}

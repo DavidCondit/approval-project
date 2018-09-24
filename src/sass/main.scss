@@ -1,3 +1,17 @@
-@import "_base.scss";
-@import "_layout.scss";
-@import "_components.scss";
+@import "other/_variables.scss";
+@import "other/_mixins.scss";
+
+@import "base/_base.scss";
+@import "base/_utilities.scss";
+@import "base/_animation.scss";
+@import "base/_typography.scss";
+
+@import "layout/_grid.scss";
+
+
+@import "components/_switch.scss";
+@import "components/_select.scss";
+@import "components/_textbox.scss";
+@import "components/_table.scss";
+@import "components/_button.scss";
+@import "components/_menu.scss";

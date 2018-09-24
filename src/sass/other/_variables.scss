@@ -1,3 +1,4 @@
+// COLOR
 $color-primary: #2f4beb;
 $color-primary-light: rgb(90, 134, 228);
 $color-primary-dark: rgb(17, 47, 146);
@@ -7,19 +8,33 @@ $color-red: rgb(224, 54, 54);
 $color-caution: rgb(231, 228, 23); 
 $color-info:rgb(38, 199, 199);
 $color-white: #fff;
+$color-black: rgb(0,0,0);
 
 $color-grey-light-1: #faf9f9;
 $color-grey-light-2: #f4f2f2;
 $color-grey-light-3: #f0eeee;
 $color-grey-light-4: #ccc;
 
-$color-grey-dark-1: #333;
+$color-grey-dark-1: #999;
 $color-grey-dark-2: #777;
-$color-grey-dark-3: #999;
+$color-grey-dark-3: #333;
+$color-grey-dark-4: #222;
+
+
 
 $shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
 $shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
 
 $shadow-inset-dark-small: 0 0 2px rgba(0,0,0,.3) inset;
 
-$line: 1px solid $color-grey-light-2;
+$line-light-1: 1px solid $color-grey-light-2;
+$line-light-2: 1px solid $color-grey-light-4;
+
+// FONT
+$default-font-size: 1.6rem;
+
+
+// GRID
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;

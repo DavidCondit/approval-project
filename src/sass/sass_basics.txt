@@ -1,0 +1,40 @@
+"#{}" can be used to interpolate variable values into a CSS declaration.
+Example:
+
+    /* $name variable is assigned value "foo." */
+    $name: foo; 
+
+    /* $attr variable is assigned value "border." */
+    $attr: border; 
+
+    /* Variables are interpolated into a CSS declaration. */
+    p.#{$name} {
+        #{$attr}-color: blue;
+    }
+
+    /* Compiled CSS: */
+    p.foo {
+        border-color: blue;
+    }
+
+----------------------------------------------------------------------------
+
+A mixin can add a pre-defined CSS declaration.
+Example:
+
+    /* A "marginCenter" mixin is defined. */
+    @mixin marginCenter {
+        margin: 0 auto;
+    }
+
+    /* A mixin is included with a @include [mixin-name] statement. */
+    .some-class {
+        background: red;
+        @include marginCenter;
+    }
+
+    /* Compiled CSS: */
+    .some-class {
+        background: red;
+        margin: 0 auto;
+    }

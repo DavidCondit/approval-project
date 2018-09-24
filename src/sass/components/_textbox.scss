@@ -1,0 +1,16 @@
+/////////////////////////////
+// TEXTBOX
+.textbox {
+    outline: none;
+    border: none;
+    vertical-align: top;
+
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: $color-grey-dark-4;
+    background: $color-grey-light-1;
+    border: 1px solid $color-grey-dark-1; 
+    display: inline-block;
+    height: 4rem;
+    padding: 1rem 1.5rem;
+}

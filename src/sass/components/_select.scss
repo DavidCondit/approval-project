@@ -1,0 +1,30 @@
+////////////////////////////////////////////////
+// SELECT
+.select {
+    display: inline-block;    
+    position: relative;
+    margin-top: none;
+    padding-top: none;
+    vertical-align: top;
+
+    &__content {
+        /* Reset user-agent appearance. */
+        font-family: inherit;
+        appearance: none;
+        outline: none;
+        box-shadow: none;   
+        color: inherit;
+        background: $color-grey-light-1;
+        border: 1px solid $color-grey-dark-1; 
+        background-image: none;
+        width: 30rem;
+        height: 4rem;
+        font-size: 1.5rem;  
+        text-indent: 2rem;
+
+        & .select__option {
+            font-family: inherit;
+            color: inherit;                 
+        }        
+    }    
+}
