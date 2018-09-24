@@ -1,6 +1,12 @@
-$color-primary: #eb2f64;
-$color-primary-light: #FF3366;
-$color-primary-dark: #BA265D;
+$color-primary: #2f4beb;
+$color-primary-light: rgb(90, 134, 228);
+$color-primary-dark: rgb(17, 47, 146);
+
+$color-green: rgba(23, 185, 71,1);
+$color-red: rgb(224, 54, 54);
+$color-caution: rgb(231, 228, 23); 
+$color-info:rgb(38, 199, 199);
+$color-white: #fff;
 
 $color-grey-light-1: #faf9f9;
 $color-grey-light-2: #f4f2f2;
@@ -14,11 +20,6 @@ $color-grey-dark-3: #999;
 $shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
 $shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
 
+$shadow-inset-dark-small: 0 0 2px rgba(0,0,0,.3) inset;
+
 $line: 1px solid $color-grey-light-2;
-
-
-$bp-largest: 75em; // 1200px / 16px
-$bp-large: 68.75em; // 1100px / 16px
-$bp-medium: 56.25em; // 900px / 16px
-$bp-small: 37.5em; // 600px / 16px
-$bp-smallest: 31.25em; // 500px / 16px

@@ -7,12 +7,6 @@
     align-items: center;
     justify-content: center;
 
-    @media only screen and (max-width: $bp-smallest) {
-        order: 1;
-        flex: 0 0 100%;
-        background-color: $color-grey-light-2;
-    }    
-
     &__input {
         font-family: inherit;
         font-size: inherit;
@@ -66,12 +60,89 @@
     margin: 8rem auto;
     background-color: $color-grey-light-2;
     box-shadow: $shadow-dark;
-
     min-height: 50rem;
-
-    @media only screen and (max-width: $bp-largest) {
-        margin: 0;
-        max-width: 100%;
-        width: 100%;
-    }
 }
+
+
+////////////////////////////////////////////////
+// SWITCH
+.switch {
+    font-size: 2rem;
+    display: block;
+    position: relative;
+    width: 6rem;
+    height: 3rem;
+    cursor: pointer;
+    user-select: none;
+
+    &__background {
+        display: block;
+        height: 100%;
+        box-shadow: $shadow-inset-dark-small;
+        transition: background .4s;
+    }
+
+    &__checkbox {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      &__slider {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 10px;
+        background: $color-grey-dark-1;
+        transition: left .2s;
+      }
+
+      & .switch__checkbox:checked ~ .switch__slider {
+        left: calc(100% - 10px);
+      }
+
+      &__label {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity .2s;
+        color: $color-white;;
+      }
+
+      & .switch__checkbox:checked ~ .switch__label-on {
+        opacity: 1;
+      }
+
+      & .switch__checkbox:checked ~ .switch__background {
+          background: $color-green;
+      }
+      
+      & .switch__checkbox:not(:checked) ~ .switch__label-off {
+        opacity: 1;
+      }
+
+      & .switch__checkbox:not(:checked) ~ .switch__background {
+        background: $color-red;
+      }
+
+      &__label {
+        &-on {
+            margin-left: 2rem;
+        }
+
+        &-off {
+            left: initial;
+            right: 0;
+            margin-right: 2rem;
+        }
+      }
+
+      &__label > i {
+        display: block;
+      }
+  }
