@@ -1,0 +1,17 @@
+.ellipsis-dropdown {
+    display: inline-block;
+    position: relative;
+    height: 4rem;
+    
+    &:hover > .menu__content {
+        display: block;
+    }
+
+    &__icon {
+
+    }
+
+    & .menu__content {
+        /* See _menu.scss. */
+    }
+}

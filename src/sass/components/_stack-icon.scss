@@ -1,0 +1,74 @@
+/* STACK-ICON */
+.stack-icon {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    background-color: $color-primary-dark;
+    padding: 20px 15px;
+    border-radius: 3px;
+    // box-shadow: 0 2px 2px rgba(0,0,0,.8);
+    transition: all .1s ease-out;
+    height: 4rem;
+  }
+  
+  /* STACK-ICON: Press-down behior */
+//   .stack-icon:hover {
+//     top: -2px;
+//     box-shadow: 0 4px 3px rgba(0,0,0,.8);
+//   }
+  
+//   .stack-icon:active {
+//     top: 1px;
+//     box-shadow: 0 1px 2px rgba(0,0,0,.8);  
+//   }
+  
+  .stack-icon__bar {
+    width: 30px;
+    height: 3px;
+    background-color: #eee;
+    position: relative;
+    opacity: 1;
+    transition: all .2s; 
+  }
+  
+  .stack-icon__bar::before,
+  .stack-icon__bar::after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 3px;
+    background-color: #eee;
+    position: absolute;
+    top: -8px;
+    left: 0;
+    transition: all .2s;
+  }
+  
+  .stack-icon__bar::before {
+    top: 8px;
+  }
+  
+  /* STACK-ICON: HOVER ACTION */
+//   .stack-icon:not(.stack-icon--close):hover .stack-icon__bar::before {
+//     top: 10px;
+//   }
+//   .stack-icon:not(.stack-icon--close):hover .stack-icon__bar::after { 
+//     top: -10px;
+//   }
+  
+  
+  /* STACK-ICON: CLOSE ACTION */
+  .stack-icon--close .stack-icon__bar {
+    background-color: transparent;
+  }
+  
+  .stack-icon--close .stack-icon__bar::before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+  
+  .stack-icon--close .stack-icon__bar::after { 
+    transform: rotate(45deg);
+    top: 0;
+  }
+  

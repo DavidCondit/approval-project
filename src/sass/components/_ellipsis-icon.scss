@@ -1,0 +1,19 @@
+.ellipsis-icon {  
+    width: 2rem;
+    display: inline-block;
+    height: 4rem;
+    position: relative;
+    background: $color-primary-dark;
+
+    /* Vertical ellipsis. */
+    &::before {
+        content: "\2807";
+        display: inline-block;
+        color: $color-white;
+        font-size: 3rem;   
+        padding: 0;
+        margin: 0;
+        margin-left: 4px;
+        @include absoluteCenter;         
+    }
+}

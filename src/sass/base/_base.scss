@@ -21,3 +21,8 @@ body {
 
     min-height: 100vh;
 }
+
+select:active, select:focus,
+input:active, input:focus {
+    border: 2px solid $color-tertiary;    
+}

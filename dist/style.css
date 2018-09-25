@@ -14,6 +14,10 @@ html {
 body {
   min-height: 100vh; }
 
+select:active, select:focus,
+input:active, input:focus {
+  border: 2px solid #dc307a; }
+
 .u-center-text {
   text-align: center !important; }
 
@@ -289,12 +293,20 @@ body {
     /* Row field heading. */ }
     .cell:last-child {
       border-bottom: none; }
+    .cell:last-child::before {
+      border-bottom: none; }
     .cell__content {
       /* Cut-off wide "row heading" cell text. */
-      display: block;
+      display: inline-block;
       white-space: nowrap;
       text-overflow: ellipsis;
-      overflow: hidden; }
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      padding: 1rem; }
     .cell::before {
       content: attr(data-column-name);
       background: #5a86e4;
@@ -310,9 +322,7 @@ body {
       /* Cut-off wide "row heading" text. */
       white-space: nowrap;
       text-overflow: ellipsis;
-      overflow: hidden; }
-      .cell::before:last-child {
-        border-bottom: none; } }
+      overflow: hidden; } }
 
 .button {
   position: relative;
@@ -326,43 +336,109 @@ body {
   font-size: 1.5rem;
   color: #fff; }
 
-.menu {
-  position: relative;
+.menu__content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  border: 1px solid #ccc;
+  color: inherit;
+  background: #fff;
+  z-index: 999; }
+  .menu__content .menu__item {
+    display: block;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-family: inherit;
+    color: inherit; }
+    .menu__content .menu__item:not(:last-child) {
+      border-bottom: 1px solid #ccc; }
+    .menu__content .menu__item:hover {
+      background: #5a86e4;
+      color: #fff; }
+
+/* STACK-ICON */
+.stack-icon {
   display: inline-block;
-  vertical-align: top; }
-  .menu:hover .menu__content {
+  position: relative;
+  cursor: pointer;
+  background-color: #112f92;
+  padding: 20px 15px;
+  border-radius: 3px;
+  transition: all .1s ease-out;
+  height: 4rem; }
+
+/* STACK-ICON: Press-down behior */
+.stack-icon__bar {
+  width: 30px;
+  height: 3px;
+  background-color: #eee;
+  position: relative;
+  opacity: 1;
+  transition: all .2s; }
+
+.stack-icon__bar::before,
+.stack-icon__bar::after {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 3px;
+  background-color: #eee;
+  position: absolute;
+  top: -8px;
+  left: 0;
+  transition: all .2s; }
+
+.stack-icon__bar::before {
+  top: 8px; }
+
+/* STACK-ICON: HOVER ACTION */
+/* STACK-ICON: CLOSE ACTION */
+.stack-icon--close .stack-icon__bar {
+  background-color: transparent; }
+
+.stack-icon--close .stack-icon__bar::before {
+  transform: rotate(-45deg);
+  top: 0; }
+
+.stack-icon--close .stack-icon__bar::after {
+  transform: rotate(45deg);
+  top: 0; }
+
+.stack-dropdown {
+  display: inline-block;
+  position: relative;
+  height: 4rem; }
+  .stack-dropdown:hover > .menu__content {
     display: block; }
-  .menu__button {
-    width: auto;
-    /* Vertical ellipsis. */ }
-    .menu__button::before {
-      content: "\2807";
-      display: inline-block;
-      color: #fff;
-      font-size: 3rem;
-      padding: 0;
-      margin: 0;
-      padding-left: 5px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); }
-  .menu__content {
-    display: none;
+  .stack-dropdown .menu__content {
+    /* See _menu.scss. */ }
+
+.ellipsis-icon {
+  width: 2rem;
+  display: inline-block;
+  height: 4rem;
+  position: relative;
+  background: #112f92;
+  /* Vertical ellipsis. */ }
+  .ellipsis-icon::before {
+    content: "\2807";
+    display: inline-block;
+    color: #fff;
+    font-size: 3rem;
+    padding: 0;
+    margin: 0;
+    margin-left: 4px;
     position: absolute;
-    border: 1px solid #ccc;
-    color: inherit;
-    background: #fff;
-    z-index: 999; }
-    .menu__content .menu__item {
-      display: block;
-      padding: 1rem;
-      font-size: 1.5rem;
-      text-decoration: none;
-      font-family: inherit;
-      color: inherit; }
-      .menu__content .menu__item:not(:last-child) {
-        border-bottom: 1px solid #ccc; }
-      .menu__content .menu__item:hover {
-        background: #5a86e4;
-        color: #fff; }
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.ellipsis-dropdown {
+  display: inline-block;
+  position: relative;
+  height: 4rem; }
+  .ellipsis-dropdown:hover > .menu__content {
+    display: block; }
+  .ellipsis-dropdown .menu__content {
+    /* See _menu.scss. */ }
