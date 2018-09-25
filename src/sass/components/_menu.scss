@@ -2,7 +2,6 @@
     position: relative;
     display: inline-block;
     vertical-align: top;    
-    // overflow: hidden;
 
     &:hover .menu__content {
         display: block;
@@ -28,9 +27,10 @@
         display: none;
         position: absolute;
         border: $line-light-2;       
-        z-index: 1; 
         color: inherit;
         background: $color-white;
+        z-index: 999; 
+
 
         .menu__item {
             display: block;
@@ -39,6 +39,10 @@
             text-decoration: none;
             font-family: inherit;    
             color: inherit;
+            
+            &:not(:last-child) {
+                border-bottom: $line-light-2;
+            }
             
             &:hover {
                 background: $color-primary-light;

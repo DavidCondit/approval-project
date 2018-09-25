@@ -22,7 +22,10 @@
                     color: $color-white;
                     font-size: 1.5rem;
                     font-weight: 100;
-                    border: $line-light-1;      
+                    border: $line-light-1;    
+                    text-align: left;
+                    vertical-align: bottom;
+                    padding: 1rem;                      
                 }
             }
         }    
@@ -63,7 +66,7 @@
         
     /* Hide heading cells. */
 	.cell--heading {
-		display: none;
+        display: none;
 	}
         
     .table__heading {
