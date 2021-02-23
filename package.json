@@ -5,7 +5,7 @@
   "scripts": {
     "compile:sass": "node-sass src/sass/main.scss dist/style.css",
     "watch:sass": "node-sass src/sass/main.scss dist/style.css -w",
-    "devserver": "live-server --port=8083",
+    "devserver": "live-server --port=8083 --open=dist/index.html",
     "start": "npm-run-all --parallel devserver watch:sass",
     "build-dev": "webpack --config webpack.dev.js",
     "build-prod": "webpack --config webpack.prod.js"
